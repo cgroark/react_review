@@ -39,6 +39,22 @@ Users.propTypes = {
   list: PropTypes.array.isRequired
 }
 
+
+//using propTypes can look like this:
+
+Users.propTypes = {
+  list: PropTypes.arrayOf(PropTypes.object)
+}
+//or 
+
+Users.propTypes = {
+  list: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    friend: PropTypes.bool.isRequired
+  }))
+  }
+}
+
 ///filter example using keys
 class Users extends React.Component {
   render() {
